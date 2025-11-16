@@ -16,6 +16,11 @@ jobs:
     name: Build MakeCode ${{ matrix.pxt-flags && '(nodocker)' }}
     runs-on: ubuntu-22.04
     steps:
+      - name: Check for Yotta GitHub auth token
+        if: ${{ ! secrets.YOTTA_GITHUB_AUTHTOKEN }}
+        run: |
+          echo "::error::Yotta GitHub auth token not found. Please create a GitHub personal access token (no scopes needed) and add it as a repository secret named YOTTA_GITHUB_AUTHTOKEN."
+          exit 1
       - name: Setup Python 3.9
         uses: actions/setup-python@v5
         with:
