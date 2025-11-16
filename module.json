@@ -13,7 +13,9 @@
     "inc/",
     "inc/bluetooth/",
     "inc/compat/",
-    "model/"
+    "model/",
+    "../codal-nrf52/inc",
+    "../codal-nrf52/source"
   ],
   "scripts": {
   }
