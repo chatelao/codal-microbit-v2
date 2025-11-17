@@ -51,6 +51,13 @@ RECURSIVE_FIND_FILE(LIB_ARCHIVE_FILES "${CMAKE_CURRENT_LIST_DIR}/lib" "*.a")
 set(CMAKE_SYSTEM_PROCESSOR "armv7-m" PARENT_SCOPE)
 
 # add them
+list(APPEND INCLUDE_DIRS "../codal-nrf52/inc")
+list(APPEND INCLUDE_DIRS "../codal-nrf52/source")
+list(APPEND INCLUDE_DIRS "../codal-core/inc/core")
+list(APPEND INCLUDE_DIRS "../codal-core/inc/driver-models")
+list(APPEND INCLUDE_DIRS "../codal-core/inc/drivers")
+list(APPEND INCLUDE_DIRS "../codal-core/inc/streams")
+list(APPEND INCLUDE_DIRS "../codal-core/inc/types")
 include_directories(${INCLUDE_DIRS})
 
 # create our target
